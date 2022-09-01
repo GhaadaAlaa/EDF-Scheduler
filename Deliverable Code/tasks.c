@@ -920,7 +920,7 @@ BaseType_t xTaskPeriodicCreate( TaskFunction_t pxTaskCode,
 
         pxNewTCB->xTaskPeriod = period;
         listSET_LIST_ITEM_VALUE( &( ( pxNewTCB )->xStateListItem ), ( pxNewTCB)->xTaskPeriod + xTaskGetTickCount());
-//delayTask = (( pxNewTCB )->xStateListItem).xItemValue;
+        //delayTask = (( pxNewTCB )->xStateListItem).xItemValue;
         prvAddNewTaskToReadyList( pxNewTCB );
 
         xReturn = pdPASS;
@@ -3644,9 +3644,9 @@ static portTASK_FUNCTION( prvIdleTask, pvParameters )
         }
 #endif /* configUSE_PREEMPTION */
         /* ADDITION1_NOT_THESIS */
-        #if(configUSE_EDF_SCHEDULER == 1)
-           		listSET_LIST_ITEM_VALUE( &( ( pxCurrentTCB )->xStateListItem ), ( pxCurrentTCB)->xTaskPeriod + xTaskGetTickCount());
-        #endif
+#if(configUSE_EDF_SCHEDULER == 1)
+        listSET_LIST_ITEM_VALUE( &( ( pxCurrentTCB )->xStateListItem ), ( pxCurrentTCB)->xTaskPeriod + xTaskGetTickCount());
+#endif
         delayIDLE = ( ( pxCurrentTCB )->xStateListItem ).xItemValue;
 #if ( ( configUSE_PREEMPTION == 1 ) && ( configIDLE_SHOULD_YIELD == 1 ) )
         {
