@@ -9,4 +9,4 @@ Deliverable docs is this folder https://drive.google.com/drive/folders/1SFtKnKvq
 
 
 
-main Version 2 contain a different communication way in queue between producer tasks and consumer tasks using Certain IDs not strings 
+main Version 2 contain a different communication way in queue between producer tasks and consumer task using Certain IDs not strings 
